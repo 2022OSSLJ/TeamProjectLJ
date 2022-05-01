@@ -13,7 +13,6 @@ int deleteCar(Car *c);
 
 void searchByType(Car *c);
 void searchByModel(Car *c);
-void searchByLocationCar *c);
+void searchByLocation(Car *c);
 void searchByPrice(Car *c);
 void searchByMileage(Car *c);
-
