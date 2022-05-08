@@ -22,3 +22,4 @@ void searchByPrice(Car *c);
 void searchByMileage(Car *c);
 
 int selectMenu();//메뉴 표출
+int selectDataNo(Car *c, int count);
