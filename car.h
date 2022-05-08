@@ -1,7 +1,8 @@
 typedef struct Car{
-	char type[20];
+	int type[6];
 	char model[20];
 	char region[20];
+	char brand[20];
 	int price;
 	int distance;
 } Car;
