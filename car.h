@@ -1,11 +1,14 @@
+#include <stdio.h>
+#include <string.h>
 typedef struct Car{
-	int type[6];
+	int type;
 	char model[20];
 	char region[20];
 	char brand[20];
 	int price;
 	int distance;
 } Car;
+
 
 int createCar(Car *c);
 void readCar(Car *c);

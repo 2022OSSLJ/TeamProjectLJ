@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include "car.h"
 
+#include "car.h"
+char t[6][10] = {"경형","소형","중형","대형","SUV","상용"};
 int createCar(Car *c){
 	
 	printf("차량의 자종을 입력하여 주세요.\n");
@@ -23,7 +22,16 @@ int createCar(Car *c){
 
 
 }
-void readCar(Car *c);
+void readCar(Car *c){
+	
+	printf("차종: %s\n",t[c->type]);
+	printf("브랜드: %s \n",c->brand);
+	printf("모델: %s\n",c->model);
+	printf("지역: %s\n",c->region);
+	printf("주행거리: %dkm\n",c->distance);
+	printf("가격: %d원\n",c->price);
+	
+}
 int updateCar(Car *c){
 	printf("***차량 수정***\n");
 	printf("차량의 자종을 입력하여 주세요.\n");
@@ -43,16 +51,13 @@ int updateCar(Car *c){
         return 0;
 
 }
-int deleteCar(Car *c);
-int selectMenu();
-void saveData(Car *c, int count);
-int loadData(Car *c);
+int deleteCar(Car *c){
+    c->distance=-1;
+    c->price=-1;
+    printf("==> 삭제됨!\n");
+    return 1;
 
-void searchByType(Car *c);
-void searchByModel(Car *c);
-void searchByLocation(Car *c);
-void searchByPrice(Car *c);
-void searchByMileage(Car *c);
+}
 
 int selectMenu(){//메뉴 표출
 	int menu;

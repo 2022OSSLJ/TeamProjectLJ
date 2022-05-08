@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "car.h"
-
+#include "manager.h"
 int main(void){
 	Car clist[100];
 	int index=0;
@@ -12,6 +11,11 @@ int main(void){
 		menu=selectMenu();
 		if (menu == 0) break;//메뉴 종료
 		else if (menu == 1){//READ
+			if (count == 0) {
+				printf("*데이터가 없습니다.*\n");
+				continue;
+				}
+			listCar(clist,index);
 		}
 		else if (menu == 2){
 			count+=createCar(&clist[index++]);
@@ -34,6 +38,17 @@ int main(void){
 
         	}
 		else if (menu == 4){//DELETE
+			int no=selectDataNo(clist, index);
+            if(no==0){
+                printf("=>취소됨!");
+                continue;
+            }
+            int deleteok;
+            printf("정말로 삭제하시겠습니까?(삭제:1)");
+            scanf("%d",&deleteok);
+            if(deleteok == 1){
+                if(deleteCar(&clist[no-1])) count --;
+                 }
 
 		}
 		else{
