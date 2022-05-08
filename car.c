@@ -4,14 +4,9 @@
 
 int createCar(Car *c){
 	
-	printf("차량의 자종을 입력하여 주세요.\n
-			경형: 0\n
-			소형: 1\n
-			중형: 2\n
-			대형: 3\n
-			SUV : 4\n
-			상용: 5\n
-			숫자로 입력하세요: ");
+	printf("차량의 자종을 입력하여 주세요.\n");
+        printf("경형: 0\n소형: 1\n중형: 2\n대형: 3\nSUV : 4\n상용: 5\n");
+        printf("숫자로 입력하세요: ");
 	scanf("%d", &c->type);
 	printf("차량의 브랜드를  입력하여 주세요: ");
         scanf("\n%[^\n]", c->brand);
@@ -31,14 +26,9 @@ int createCar(Car *c){
 void readCar(Car *c);
 int updateCar(Car *c){
 	printf("***차량 수정***\n");
-	printf("차량의 자종을 입력하여 주세요.\n
-                        경형: 0\n
-                        소형: 1\n
-                        중형: 2\n
-                        대형: 3\n
-                        SUV : 4\n
-                        상용: 5\n
-                        숫자로 입력하세요: ");
+	printf("차량의 자종을 입력하여 주세요.\n");
+	printf("경형: 0\n소형: 1\n중형: 2\n대형: 3\nSUV : 4\n상용: 5\n");
+	printf("숫자로 입력하세요: ");
         scanf("%d", &c->type);
         printf("차량의 브랜드를  입력하여 주세요: ");
         scanf("\n%[^\n]", c->brand);
@@ -76,7 +66,7 @@ int selectMenu(){//메뉴 표출
     	printf("7. 정보검색\n");
     	printf("8. 원산지검색\n");
     	printf("0. 종료\n\n");
-    	printf("=> 원하는 메뉴는? ");
+    	printf("=> 원하는 메뉴를 선택하세요: ");
     	scanf("%d", &menu);
    	return menu;
 }

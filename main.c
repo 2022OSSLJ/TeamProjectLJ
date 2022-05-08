@@ -6,10 +6,8 @@ int main(void){
 	Car clist[100];
 	int index=0;
 	int count=0;
-	int menu;
 	int result=0;
-	/*count=loadData(clist);
-	index=count;*/
+	int menu;
 	while(1){
 		menu=selectMenu();
 		if (menu == 0) break;//메뉴 종료
@@ -30,7 +28,7 @@ int main(void){
                 		printf("=> 취소됨!\n");
                 		continue;
             		}
-            		updateProduct(&plist[no-1]);
+            		updateCar(&clist[no-1]);
             		printf("=>수정됨!\n");
 
 
@@ -38,9 +36,11 @@ int main(void){
 		else if (menu == 4){//DELETE
 
 		}
-		printf("프로그램이 종료되었습니다.\n");
-		return 0;
+		else{
+			printf("잘못된 번호입니다.\n");
+		}
 	}
-
+	printf("프로그램이 종료되었습니다.\n");
+	return 0;
 }
 
