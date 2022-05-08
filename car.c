@@ -80,4 +80,22 @@ int selectMenu(){//메뉴 표출
     	scanf("%d", &menu);
    	return menu;
 }
+int selectDataNo(Car *c, int count){
+	int no;
+	no=0;
+	//listCar(c, count);
+	while(1){
+        	printf("번호는 (취소: 0)? ");
+        	scanf("%d", &no);
+        	if(no<0||no>count){
+            		printf("잘못된 번호입니다.\n");
+            		continue;
+        	}
+        	else{
+            		break;
+        	}
+    	}
+	return no;
+}
+
 
