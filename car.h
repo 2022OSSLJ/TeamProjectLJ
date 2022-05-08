@@ -1,7 +1,8 @@
 typedef struct Car{
-	char type[20];
+	int type[6];
 	char model[20];
 	char region[20];
+	char brand[20];
 	int price;
 	int distance;
 } Car;
@@ -14,9 +15,11 @@ int selectMenu();
 void saveData(Car *c, int count);
 int loadData(Car *c);
 
-
 void searchByType(Car *c);
 void searchByModel(Car *c);
 void searchByLocation(Car *c);
 void searchByPrice(Car *c);
 void searchByMileage(Car *c);
+
+int selectMenu();//메뉴 표출
+int selectDataNo(Car *c, int count);
