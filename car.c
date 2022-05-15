@@ -17,6 +17,8 @@ int createCar(Car *c){
 	scanf("%d", &c->distance);
 	printf("차량의 가격을  입력하여 주세요: ");
         scanf("%d", &c->price);
+	printf("판매자의 연락처를 입력하여 주세요: ");
+	scanf("%s", c->phone);
 	return 1;
 
 
@@ -48,6 +50,8 @@ int updateCar(Car *c){
         scanf("%d", &c->distance);
         printf("차량의 가격을  입력하여 주세요: ");
         scanf("%d", &c->price);
+	printf("판매자의 연락처를 입력하여 주세요: ");
+	scanf("%s", c->phone);	
         return 0;
 
 }
