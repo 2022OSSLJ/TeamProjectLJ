@@ -7,6 +7,7 @@ typedef struct Car{
 	char brand[20];
 	int price;
 	int distance;
+	char phone[20];
 } Car;
 
 
