@@ -1,4 +1,3 @@
-
 #include "car.h"
 char t[6][10] = {"경형","소형","중형","대형","SUV","상용"};
 int createCar(Car *c){
@@ -62,7 +61,52 @@ int deleteCar(Car *c){
     return 1;
 
 }
+void saveData(Car *c, int count){
+	FILE *file;
+   	file=fopen("car.txt", "wt");
+    	for(int i=0;i<count;i++){
+        	if(c[i].distance==-1){
+            		continue;
+        	}
+        
+        fprintf(file,"%d,%s,%s,%s,%d,%d,%s\n",
+        c[i].type,
+        c[i].model,
+        c[i].region,
+        c[i].brand,
+        c[i].price,
+        c[i].distance,
+	c[i].phone);
+    	}
+   	fclose(file);
+    	printf("=>저장됨!\n");
+}
+int loadData(Car *c){
+	int i=0;
+    	FILE*file=NULL;
+    	file=fopen("car.txt","r");
+    	if(file==NULL){
+        	printf("=>파일 없음\n");
+        	return 0;
+    	}
+   	while(!feof(file)){
+        	char line[1024];
+        	fgets(line, 1024, file);
+        	sscanf(line,"%d,%[^\n,],%[^\n,],%[^\n,],%d,%d,%s",
+        	&c[i].type,
+        	c[i].model,
+        	c[i].region,
+        	c[i].brand,
+        	&c[i].price,
+        	&c[i].distance,
+		c[i].phone);
+        	i++;
+    	}
+    	fclose(file);
+    	printf("=> %d개의 데이터 로딩 성공!\n", i-1);
 
+    	return i-1;
+}
 int selectMenu(){//메뉴 표출
 	int menu;
     	printf("\n***중고차***\n");
@@ -96,5 +140,3 @@ int selectDataNo(Car *c, int count){
     	}
 	return no;
 }
-
-

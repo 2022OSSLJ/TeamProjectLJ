@@ -5,6 +5,8 @@ int main(void){
 	Car clist[100];
 	int index=0;
 	int count=0;
+	count=loadData(clist);
+	index=count;
 	int result=0;
 	int menu;
 	while(1){
@@ -51,6 +53,9 @@ int main(void){
                  }
 
 		}
+		else if (menu == 5){
+			saveData(clist, index);
+		}
 		else{
 			printf("잘못된 번호입니다.\n");
 		}
@@ -58,4 +63,5 @@ int main(void){
 	printf("프로그램이 종료되었습니다.\n");
 	return 0;
 }
+
 
