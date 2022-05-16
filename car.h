@@ -19,11 +19,6 @@ int deleteCar(Car *c);
 void saveData(Car *c, int count);
 int loadData(Car *c);
 
-void searchByType(Car *c);
-void searchByModel(Car *c);
-void searchByLocation(Car *c);
-void searchByPrice(Car *c);
-void searchByMileage(Car *c);
 
 int selectMenu();//메뉴 표출
 int selectDataNo(Car *c, int count);

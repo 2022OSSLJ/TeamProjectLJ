@@ -17,7 +17,8 @@ int createCar(Car *c){
 	printf("차량의 가격을  입력하여 주세요: ");
         scanf("%d", &c->price);
 	printf("판매자의 연락처를 입력하여 주세요: ");
-	scanf("%s", c->phone);
+	scanf("\n%[^\n]", c->phone);
+;
 	return 1;
 
 
@@ -31,6 +32,7 @@ void readCar(Car *c){
 	printf("지역: %s\n",c->region);
 	printf("주행거리: %dkm\n",c->distance);
 	printf("가격: %d원\n",c->price);
+	printf("판매자 전화번호: %s\n",c->phone);
 	
 }
 int updateCar(Car *c){
@@ -115,9 +117,11 @@ int selectMenu(){//메뉴 표출
     	printf("3. UPDATE\n");
     	printf("4. DLETE\n");
     	printf("5. 파일저장\n");
-    	printf("6. 이름검색\n");
-    	printf("7. 정보검색\n");
-    	printf("8. 원산지검색\n");
+    	printf("6. 차종검색\n");
+    	printf("7. 모델검색\n");
+    	printf("8. 지역검색\n");
+		printf("9. 가격검색\n");
+		printf("10. 주행거리검색\n");
     	printf("0. 종료\n\n");
     	printf("=> 원하는 메뉴를 선택하세요: ");
     	scanf("%d", &menu);

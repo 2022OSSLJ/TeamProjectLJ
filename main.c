@@ -56,6 +56,21 @@ int main(void){
 		else if (menu == 5){
 			saveData(clist, index);
 		}
+		else if (menu == 6){
+			searchType(clist,index);
+		}
+		else if (menu == 7){
+			searchModel(clist,index);
+		}
+		else if (menu == 8){
+			searchRegion(clist, index);
+		}
+		else if (menu == 9){
+			searchPrice(clist, index);
+		}
+		else if (menu == 10){
+			searchDistance(clist, index);
+		}
 		else{
 			printf("잘못된 번호입니다.\n");
 		}
